@@ -1,0 +1,75 @@
+<br>
+<h1 class="cart_header" appColor>GIỎ HÀNG</h1>
+<span *ngIf="productsInCart.length==0 || !productsInCart ; then condition1; else condition2;"></span>
+<ng-template #condition1><h3 style="text-align: center; color: red;">KHÔNG CÓ SẢN PHẨM NÀO</h3></ng-template>
+<ng-template #condition2 >
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Tên</th>
+          <th scope="col">Hình ảnh</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Giá</th>
+          <th>Xóa</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of productsInCart">
+        <tr>
+          <!-- <th scope="row">{{item.id}}</th> -->
+          <td>{{item.name}}</td>
+          <td><img src="../../../assets/img/{{item.image}}" style="width:6%" alt=""></td>
+          <td><button [hidden]="item.quantity==1" (click)="decrease(item)" class="btn btn-dark" style="border-radius: 120%;" >-</button> {{item.quantity}} <button class="btn btn-dark" style="border-radius: 120%;" (click)="increase(item)">+</button></td>
+          <td>{{item.price*item.quantity | currency:"$" }}</td>
+          <td><img src="../../../assets/img/outline_delete_black_24dp.png" style="width:40%;" alt="" (click)="deleteItemCart(item)"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 style="float: right;" appColor>Tổng tiền: {{total | currency}}</h4>
+    <a class="btn btn-dark" data-bs-toggle="modal" href="#exampleModalToggle" role="button">THANH TOÁN</a>
+  </div>
+</div>
+<br>
+</ng-template>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">THANH TOÁN</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div class="modal-body">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+            formControlName="email" >
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="examplePhone" class="form-label">Số điện thoại</label>
+            <input type="number" class="form-control" id="examplePhone" name="phone"
+            formControlName="phone"/>
+          </div>
+          <div class="mb-3">
+            <label for="exampleAddress" class="form-label">Địa chỉ</label>
+            <textarea class="form-control" id="exampleAddress" name="address"
+            formControlName="address"></textarea>
+          </div>
+          <span>ĐỒNG Ý THANH TOÁN VỚI {{total | currency}}</span>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >OK</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+

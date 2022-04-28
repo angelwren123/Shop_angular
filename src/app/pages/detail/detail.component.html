@@ -1,0 +1,47 @@
+<br>
+<h1 class="detail_header" appColor>CHI TIẾT SẢN PHẨM</h1>
+<br>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-5 detail_img" style="border: 1px solid black;">
+      <img class="detail_img-img" src="../../../assets/img/{{aProduct ? aProduct.image:''}}" width="80%" alt="{{aProduct ? aProduct.name:''}}">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-6">
+      <div class="detail_product">
+        <h2 class="detail_name">{{aProduct ? (aProduct.name|uppercase) :'' }}</h2>
+        <h3 class="detail_price">Giá: <span appColor>{{aProduct ? (aProduct.price|currency) :'' }}</span></h3>
+        <p class="detail_type">Loại: {{aProduct ? aProduct.type :'' }}</p>
+        <label for="mota">Mô tả</label>
+        <textarea name="" id="mota" class="detail_desc" disabled>{{aProduct ? aProduct.desc:''}}</textarea>
+        <button class="btn btn-dark" (click)="addToCart()">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+   <!-- Product section-->
+   <section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="../../../assets/img/{{aProduct ? aProduct.image:''}}" alt="{{aProduct ? aProduct.name:''}}" /></div>
+            <div class="col-md-6">
+              <h1 class="display-5 fw-bolder">{{aProduct ? (aProduct.name|uppercase) :'' }}</h1>
+              <div class="fs-5 mb-5">
+                <!-- <span class="text-decoration-line-through">$45.00</span> -->
+                <span appColor>{{aProduct ? (aProduct.price|currency) :'' }}</span>
+              </div>
+              <div class="small mb-1">Type: {{aProduct ? aProduct.type :'' }}</div>
+                <p class="lead">{{aProduct ? aProduct.desc:''}}</p>
+                <div class="d-flex">
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button" (click)="addToCart()">
+                        <i class="bi-cart-fill me-1"></i>
+                        Thêm vào giỏ hàng
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

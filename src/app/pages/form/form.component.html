@@ -1,0 +1,40 @@
+<div class="form-products">
+  <h1 appColor class="heading">THÊM/CHỈNH SỬA SẢN PHẨM</h1>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+          <label for="inputName" class="form-label">Tên sản phẩm</label>
+          <input type="text" class="form-control" id="inputName" name="name"
+          formControlName="name" >
+        </div>
+        <div class="mb-3">
+          <label for="inputPrice" class="form-label">Giá sản phẩm</label>
+          <input type="number" class="form-control" id="inputPrice" name="price"
+          formControlName="price">
+        </div>
+        <div class="mb-3">
+          <label for="inputType" class="form-label">Loại </label>
+          <select id="inputType" name="type" formControlName="type" >
+            <option value="Shoes">Shoes</option>
+            <option value="Glasses">Glasses</option>
+            <option value="Hat">Hat</option>
+            <option value="Bag">Bag</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="inputDesc" class="form-label">Mô tả</label>
+          <textarea type="text" class="form-control" id="inputDesc" name="desc"
+          formControlName="desc" ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="inputImage" class="form-label">Hình ảnh</label>
+          <input type="file" class="form-control" id="inputImage" name="image" accept="image/*"
+          formControlName="image" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

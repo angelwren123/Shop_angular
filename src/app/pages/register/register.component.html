@@ -1,0 +1,25 @@
+
+<div class="row">
+  <h1 appColor style="text-align: center;">ĐĂNG KÝ NGƯỜI DÙNG</h1>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+      <label for="exampleInputEmail1" class="form-label">Tài khoản</label>
+      <input required name="user"
+      formControlName="user" type="text" placeholder="username" style="width: 240px;"
+      class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" class="input-login">
+    <br>
+      <label for="inputPassword5" class="form-label">Mật khẩu</label>
+      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" class="input-login"
+        placeholder="password" name="pass"
+        formControlName="pass" style="width: 240px;"/>
+      <br>
+      <button type="submit" class="btn btn-dark">Đăng kí</button>
+      <br>
+    </form>
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div>

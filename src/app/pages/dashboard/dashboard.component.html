@@ -1,0 +1,31 @@
+<div class="dashboard">
+  <button class="btn btn-dark" [routerLink]="['/form/0']" [routerLinkActive]="'router-link-active'">Thêm sản phẩm</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Tên</th>
+        <th scope="col">Loại</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Hình ảnh</th>
+        <th scope="col">Description</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.type}}</td>
+        <td>{{product.price}}</td>
+        <td><img src="../../../assets/img/{{product.image}}" width="40%" alt="{{product.name}}"></td>
+        <td>{{product.desc}}</td>
+        <td><img src="../../../assets/img/outline_build_black_24dp.png" width="80%" alt="Sửa" (click)="handleUpdate(product.id)"></td>
+        <td><img src="../../../assets/img/outline_delete_black_24dp.png" width="80%" alt="Xóa" (click)="handleDelete(product.id)"></td>
+
+      </tr>
+    </tbody>
+  </table>
+  </div>
+

@@ -1,0 +1,75 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img src="../../../assets/img/logo.png" width="70" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/home']" [routerLinkActive]="'router-link-active'" >Trang chủ</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/products']" [routerLinkActive]="'router-link-active'">Sản phẩm</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="'router-link-active'" [hidden]="!flag">Quản lý</a>
+        </li>
+
+      </ul>
+
+
+        <a class="nav-link" style="cursor: pointer;" [routerLink]="['/login']" [routerLinkActive]="'router-link-active'" [hidden]="flag">
+          <img src="../../../assets/img/outline_login_black_24dp.png" width="40%" alt="cart" ><span>Login</span>
+        </a>
+        <a class="nav-link" style="cursor: pointer;" [hidden]="!flag"  >
+          <img src="../../../assets/img/outline_logout_black_24dp.png" width="40%" alt="cart" (click)="logout()"><span (click)="logout()">Logout</span>
+        </a>
+        <a class="nav-link" [routerLink]="['/cart']" [routerLinkActive]="'router-link-active'">
+          <img src="../../../assets/img/outline_shopping_cart_black_24dp.png" width="50%" alt="cart">
+        </a>
+
+    </div>
+  </div>
+</nav> -->
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light header__custom">
+  <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" [routerLink]="['/']" [routerLinkActive]="'router-link-active'"><img src="../../../assets/img/logo.png" width="70" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" [routerLink]="['/home']" [routerLinkActive]="'router-link-active'" >Trang chủ</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/products']" [routerLinkActive]="'router-link-active'">Sản phẩm</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="'router-link-active'" [hidden]="!booleandb">Quản lý</a></li>
+          </ul>
+          <a class="nav-link" style="cursor: pointer;" [routerLink]="['/login']" [routerLinkActive]="'router-link-active'" [hidden]="flag">
+            <img src="../../../assets/img/outline_login_black_24dp.png" width="20px" alt="cart" ><span style="color: black;">Đăng nhập</span>
+          </a>
+          <a class="nav-link" style="cursor: pointer;" [routerLink]="['/register']" [routerLinkActive]="'router-link-active'" [hidden]="flag">
+            <img src="../../../assets/img/outline_login_black_24dp.png" width="20px" alt="cart" ><span style="color: black;">Đăng kí</span>
+          </a>
+          <a class="nav-link" style="cursor: pointer;" [hidden]="!flag"  >
+            <img src="../../../assets/img/outline_logout_black_24dp.png" width="20px" alt="cart" (click)="logout()"><span style="color: black;" (click)="logout()">Đăng xuất</span>
+          </a>
+          <form class="d-flex ">
+              <button class="btn btn-outline-dark" type="submit" [routerLink]="['/cart']" [routerLinkActive]="'router-link-active'">
+                <img src="../../../assets/img/outline_shopping_cart_black_24dp.png" width="20px" alt="cart">
+                  Giỏ hàng
+                  <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">0</span> -->
+              </button>
+          </form>
+      </div>
+  </div>
+</nav>
+<!-- Header-->
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Shop in style</h1>
+          <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+      </div>
+  </div>
+</header>

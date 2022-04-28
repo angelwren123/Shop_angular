@@ -1,0 +1,14 @@
+.detail_header{
+  text-align: center;
+}
+.detail_desc{
+  width:100%;
+  border: none;
+  height: 150px;
+  background-color: white;
+}
+.detail_img{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
